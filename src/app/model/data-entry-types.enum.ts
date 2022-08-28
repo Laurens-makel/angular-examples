@@ -1,5 +1,5 @@
 export enum DataEntryType {
-  NUMBER,
-  TEXT,
-  VALUELIST
+  NUMBER= "number",
+  TEXT="text",
+  VALUELIST="valuelist"
 }

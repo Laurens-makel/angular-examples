@@ -6,6 +6,8 @@ export class DataEntry<T> {
   public value:T|undefined;
   public type:DataEntryType = DataEntryType.TEXT;
   public required: boolean = false;
+  public maxValue?: number;
+  public minValue?: number;
   public options?: string[];
   public blacklist?: T;
 

@@ -45,8 +45,21 @@ export class DataService {
         required: true,
         value: "",
         options: ["Pizza", "Pasta"]
+      }),
+
+      new DataEntry<number>({
+        id: 5,
+        label: "Amount of gifts",
+        type: DataEntryType.NUMBER,
+        required: true,
+        value: 2,
+        minValue: 1,
+        maxValue: 3
       })
     ]
+
+
+
 
     return of(data.sort((a, b) => a.id - b.id));
   }

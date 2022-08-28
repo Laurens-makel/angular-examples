@@ -33,6 +33,13 @@ export class DataControlService {
       validations.push(Validators.required);
     }
 
+    if(obj.maxValue){
+      validations.push(Validators.max(obj.maxValue))
+    }
+    if(obj.minValue){
+      validations.push(Validators.min(obj.minValue))
+    }
+
     if(obj.blacklist){
       validations.push(blackListValidator(new RegExp(obj.blacklist)));
     }

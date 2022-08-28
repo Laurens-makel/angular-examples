@@ -16,6 +16,7 @@ export class FormGroupFieldComponent implements OnInit {
   get isValid() { return this.field.valid; }
 
   get field() { return this.form.controls[this.entry.id] }
+  get errors() { return this.field.errors }
 
   constructor() { }
 
