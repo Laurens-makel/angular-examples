@@ -1,4 +1,4 @@
-<div [formGroup]="form">
+<div [formGroup]="form" class="form-group">
   <!-- Create a label for the field -->
   <label [attr.for]="entry.id">{{entry.label}}</label>
 
@@ -6,8 +6,8 @@
   <div [ngSwitch]="entry.type">
 
     <!-- Display select element when valuelist -->
-    <div *ngSwitchCase="DataEntryType.VALUELIST">
-      <select [formControlName]="entry.id">
+    <div *ngSwitchCase="DataEntryType.VALUELIST" >
+      <select class="form-control" [formControlName]="entry.id">
         <option *ngFor="let option of entry.options" [ngValue]="option">
           {{ option }}
         </option>
@@ -16,7 +16,7 @@
 
     <!-- Display the field and inject FormControlName to input element, default number and string types. -->
     <div *ngSwitchDefault>
-      <input [attr.type]="entry.type" [attr.id]="entry.id" [attr.name]="entry.label" [formControlName]="entry.id">
+      <input class="form-control" [attr.type]="entry.type" [attr.id]="entry.id" [attr.name]="entry.label" [formControlName]="entry.id">
     </div>
   </div>
   <div class="error" *ngIf="field.touched && field.invalid">
