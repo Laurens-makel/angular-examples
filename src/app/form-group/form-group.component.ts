@@ -22,7 +22,4 @@ export class FormGroupComponent {
   }
   _data: DataEntry<any>[] = []
 
-  getField(entry: DataEntry<any>) : FormControl {
-    return this.form.get(entry.id+"") as FormControl
-  }
 }

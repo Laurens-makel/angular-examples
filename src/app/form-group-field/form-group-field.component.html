@@ -20,9 +20,8 @@
     </div>
   </div>
   <div class="error" *ngIf="field.touched && field.invalid">
-    <span *ngIf="field.errors?.['blacklist']">Waarde is niet toegestaan</span>
-    <span *ngIf="field.errors?.['required']">Veld is vereist</span>
+    <span *ngIf="field.errors?.['blacklist']">Value is not allowed.</span>
+    <span *ngIf="field.errors?.['required']">Field is required.</span>
   </div>
-
 </div>
 
