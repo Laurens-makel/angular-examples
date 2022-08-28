@@ -6,7 +6,7 @@
   <div [ngSwitch]="entry.type">
 
     <!-- Display select element when valuelist -->
-    <div *ngSwitchCase="'valuelist'">
+    <div *ngSwitchCase="DataEntryType.VALUELIST">
       <select [formControlName]="entry.id">
         <option *ngFor="let option of entry.options" [ngValue]="option">
           {{ option }}

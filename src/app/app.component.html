@@ -1,3 +1,12 @@
 <div id="app-root">
-  <app-form-group [data]="data$ | async"></app-form-group>
+
+  <ngb-accordion [closeOthers]="true" activeIds="static-1"  class="accordion">
+    <ngb-panel id="static-1" title="Reactive Form">
+      <ng-template ngbPanelContent>
+
+        <app-form-group [data]="data$ | async"></app-form-group>
+
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
 </div>
