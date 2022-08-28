@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {DataEntry} from "../model/data-entry";
 import {Observable, of} from "rxjs";
+import {DataEntryType} from "../model/data-entry-types.enum";
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class DataService {
       new DataEntry<number>({
         id: 1,
         label: "Phone",
-        type: "number",
+        type: DataEntryType.NUMBER,
         required: true,
         value: 6
       }),
@@ -23,7 +24,7 @@ export class DataService {
       new DataEntry<string>({
         id: 2,
         label: "Email",
-        type: "string",
+        type: DataEntryType.TEXT,
         required: true,
         value: "example@example.com"
       }),
@@ -31,7 +32,7 @@ export class DataService {
       new DataEntry<string>({
         id: 3,
         label: "Website",
-        type: "string",
+        type: DataEntryType.TEXT,
         required: true,
         value: "",
         blacklist: "google"
@@ -40,7 +41,7 @@ export class DataService {
       new DataEntry<string>({
         id: 4,
         label: "Food",
-        type: "valuelist",
+        type: DataEntryType.VALUELIST,
         required: true,
         value: "",
         options: ["Pizza", "Pasta"]
