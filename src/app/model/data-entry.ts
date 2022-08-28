@@ -8,9 +8,11 @@ export class DataEntry<T> {
   public required: boolean = false;
   public maxValue?: number;
   public minValue?: number;
+  public email?: boolean;
   public options?: string[];
   public blacklist?: T;
   public slaves?: {option: string, field: number, slaveOptions: string[]}[];
+
 
   constructor(partial: Partial<DataEntry<T>>) {
     Object.assign(this, partial);

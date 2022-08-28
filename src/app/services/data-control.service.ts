@@ -32,6 +32,9 @@ export class DataControlService {
     if(obj.required){
       validations.push(Validators.required);
     }
+    if(obj.email){
+      validations.push(Validators.email);
+    }
 
     if(obj.maxValue){
       validations.push(Validators.max(obj.maxValue))

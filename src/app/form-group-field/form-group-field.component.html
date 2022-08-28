@@ -21,8 +21,9 @@
   </div>
   <div class="error" *ngIf="field.touched && field.invalid">
     <span *ngIf="errors?.['blacklist']">Value is not allowed.</span>
-    <span *ngIf="errors?.['max']">Value is cannot be greater than {{entry.maxValue}}.</span>
-    <span *ngIf="errors?.['min']">Value is cannot be less than {{entry.minValue}}.</span>
+    <span *ngIf="errors?.['email']">Value {{entry.value}} is not a valid email.</span>
+    <span *ngIf="errors?.['max']">Value cannot be greater than {{entry.maxValue}}.</span>
+    <span *ngIf="errors?.['min']">Value cannot be less than {{entry.minValue}}.</span>
     <span *ngIf="errors?.['required']">Field is required.</span>
   </div>
 </div>

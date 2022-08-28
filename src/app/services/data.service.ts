@@ -17,8 +17,7 @@ export class DataService {
         id: 1,
         label: "Phone",
         type: DataEntryType.NUMBER,
-        required: true,
-        value: 6
+        required: true
       }),
 
       new DataEntry<string>({
@@ -26,7 +25,7 @@ export class DataService {
         label: "Email",
         type: DataEntryType.TEXT,
         required: true,
-        value: "example@example.com"
+        email: true
       }),
 
       new DataEntry<string>({
@@ -52,7 +51,6 @@ export class DataService {
         ]
       }),
 
-
       new DataEntry<string>({
         id: 5,
         label: "Food",
@@ -67,14 +65,10 @@ export class DataService {
         label: "Amount of gifts",
         type: DataEntryType.NUMBER,
         required: true,
-        value: 2,
         minValue: 1,
         maxValue: 3
       })
     ]
-
-
-
 
     return of(data.sort((a, b) => a.id - b.id));
   }
