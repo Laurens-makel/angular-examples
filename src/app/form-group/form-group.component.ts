@@ -1,5 +1,5 @@
 import {ChangeDetectorRef, Component, Input} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormGroup} from "@angular/forms";
 import {DataEntry} from "../model/data-entry";
 import {DataControlService} from "../services/data-control.service";
 
@@ -24,15 +24,14 @@ export class FormGroupComponent {
 
   changeMasterDetail(entry: DataEntry<any>) {
     if(entry.slaves){
-      const slaveIndex = entry.slaves.findIndex(slave => slave.option == entry.value);
+      const slaveChange = entry.slaves.find(slave => slave.option == entry.value);
 
-      if(slaveIndex > -1){
-        const slave = entry.slaves[slaveIndex];
-        const slaveEntry = this._data.find(e => e.id == slave.field);
+      if(slaveChange !== undefined){
+        const slaveEntry = this._data.find(e => e.id == slaveChange.field);
 
         if(slaveEntry !== undefined){
-          slaveEntry.options = slave.slaveOptions;
           const slaveField = this.form.get(slaveEntry.id+"");
+          slaveEntry.options = slaveChange.slaveOptions;
 
           if(slaveEntry.options.indexOf(slaveField?.value) == -1){
             slaveEntry.value = "";
