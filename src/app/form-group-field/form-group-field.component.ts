@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {DataEntry} from "../model/data-entry";
 import {FormGroup} from "@angular/forms";
 import {DataEntryType} from "../model/data-entry-types.enum";
@@ -11,6 +11,8 @@ import {DataEntryType} from "../model/data-entry-types.enum";
 export class FormGroupFieldComponent implements OnInit {
   @Input() entry!: DataEntry<any>;
   @Input() form!: FormGroup;
+
+  @Output() select = new EventEmitter<DataEntry<any>>();
 
   DataEntryType = DataEntryType;
   get isValid() { return this.field.valid; }

@@ -40,15 +40,30 @@ export class DataService {
 
       new DataEntry<string>({
         id: 4,
+        label: "Country",
+        type: DataEntryType.VALUELIST,
+        required: true,
+        value: "",
+        options: ["Germany","Spain","Italy"],
+        slaves: [
+          {option: "Germany", field: 5, slaveOptions: ["Bradwurst"]},
+          {option: "Spain", field: 5, slaveOptions: ["Tapas"]},
+          {option: "Italy", field: 5, slaveOptions: ["Pizza", "Pasta"]}
+        ]
+      }),
+
+
+      new DataEntry<string>({
+        id: 5,
         label: "Food",
         type: DataEntryType.VALUELIST,
         required: true,
         value: "",
-        options: ["Pizza", "Pasta"]
+        options: ["Bradwurst","Tapas","Pizza","Pasta"]
       }),
 
       new DataEntry<number>({
-        id: 5,
+        id: 6,
         label: "Amount of gifts",
         type: DataEntryType.NUMBER,
         required: true,

@@ -10,6 +10,7 @@ export class DataEntry<T> {
   public minValue?: number;
   public options?: string[];
   public blacklist?: T;
+  public slaves?: {option: string, field: number, slaveOptions: string[]}[];
 
   constructor(partial: Partial<DataEntry<T>>) {
     Object.assign(this, partial);
