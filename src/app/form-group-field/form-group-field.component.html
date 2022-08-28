@@ -1,0 +1,28 @@
+<div [formGroup]="form">
+  <!-- Create a label for the field -->
+  <label [attr.for]="entry.id">{{entry.label}}</label>
+
+  <!-- Switch on basis of field type -->
+  <div [ngSwitch]="entry.type">
+
+    <!-- Display select element when valuelist -->
+    <div *ngSwitchCase="'valuelist'">
+      <select [formControlName]="entry.id">
+        <option *ngFor="let option of entry.options" [ngValue]="option">
+          {{ option }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Display the field and inject FormControlName to input element, default number and string types. -->
+    <div *ngSwitchDefault>
+      <input [attr.type]="entry.type" [attr.id]="entry.id" [attr.name]="entry.label" [formControlName]="entry.id">
+    </div>
+  </div>
+  <div class="error" *ngIf="field.touched && field.invalid">
+    <span *ngIf="field.errors?.['blacklist']">Waarde is niet toegestaan</span>
+    <span *ngIf="field.errors?.['required']">Veld is vereist</span>
+  </div>
+
+</div>
+
